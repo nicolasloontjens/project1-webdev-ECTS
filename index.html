@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Howest Trajectbuilder</title>
+    <link rel="stylesheet" href="assets/css/reset.css"/>
+    <link rel="stylesheet" href="assets/css/screen.css"/>
+
+    <!-- open sans !-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <meta name="author" content="Nicolas Loontjens"/>
+</head>
+<body>
+
+<header>
+    <div>
+        <h1>howest curriculum builder</h1>
+        <h2>Create your individual curriculum</h2>
+    </div>
+    <img src="images/howest.jpg" alt="foto Howest gebouw" title="Howest gebouw">
+</header>
+<main>
+    <div id="container">
+        <section>
+            <h2 id="CurriculumBuilder" class="title">Curriculum builder: the tool for tailored curricula</h2>
+
+            <p>
+                Studying for a Bachelor's degree can be tough. Not everyone commences studies with the same background,
+                whilst others combine it with a (full-time) job. In order to service all students from all backgrounds,
+                we enable them to <b>create a tailor-made curriculum</b> that suits their needs.
+            </p>
+
+            <p>
+                Curricula have to fit like a glove. Study too light, <b>boredom and disinterest</b> will set in.
+                Take on a too loaded approach and you'll <b>succomb to the insurmountable pressure.</b>
+                It is important that each semester is balanced.
+            </p>
+
+            <p>
+                This tool allows you to take your pick from available courses and construct a schedule that does not only
+                fit your needs, but <em title="Sometimes you need to complete course A before being able to take on course B. These rules are built into the system">respects the order</em> in which certain topics need to be processed.
+                You may take longer or shorter than a <em title="Standard students are students who follow a model trajectory laid out by the academy itself">standard student</em> depending on your constructed curriculum,
+                but at least you'll be happy
+            </p>
+
+            <p>
+                Go ahead and get started!
+            </p>
+            <ul>
+                <li class="button"><a href="#" data-current-section="0" data-reference-section="1">Enter personal data</a></li>
+            </ul>
+
+        </section>
+
+        <section>
+            <h2 id="EnterData" class="title">Enter personal data</h2>
+            <p>In order to serve you correctly, we need to know some basic information first</p>
+            <form id="personalData" action="#" method="post">
+                <label for="name">name</label>
+                <input type="text" name="name" id="name" required minlength="2"/>
+                <label for="email">email</label>
+                <input type="text" name="email" id="email" required/>
+                <label for="ECTS">ECTS available for allocation</label>
+                <input type="number" name="ECTS" id="ECTS" min="3" max="60" required/>
+            </form>
+
+            <ul>
+                <li class="button"><a href="#" data-current-section="1" data-reference-section="2" id="validate">Configure completed courses &gt;</a></li>
+            </ul>
+
+        </section>
+
+        <section>
+
+            <h2 id="CompletedCourses" class="title">Select the courses you have already completed</h2>
+
+            <p>
+                Selecting the courses that have already been completed will enable us to correctly fill out
+                prerequisite knowledge for follow-up courses. If you haven't completed any courses yet,
+                your selection will be limited to courses from the first and second semester.
+            </p>
+
+            <div class="filters">
+                <div>
+                    <ol data-current-modules="#completedcoursesmodules" id="f1">
+                        <li><a href="#" class="filtersActive"><p>S1</p></a></li>
+                        <li><a href="#" class="filtersActive"><p>S2</p></a></li>
+                        <li><a href="#" class="filtersActive"><p>S3</p></a></li>
+                        <li><a href="#" class="filtersActive"><p>S4</p></a></li>
+                        <li><a href="#" class="filtersActive"><p>S5</p></a></li>
+                        <li><a href="#" class="filtersActive"><p>S6</p></a></li>
+                    </ol>
+                    <p>visible semesters</p>
+                </div>
+
+                <div>
+                    <select id="sortCourses" name="sortCourses" form="personalData">
+                        <option value="ascending">ascending</option>
+                        <option value="descending">descending</option>
+                    </select>
+                    <label for="sortCourses">sort courses</label>
+                </div>
+            </div>
+
+            <div class="flexbox" id="completedcoursesmodules">
+                <section>
+                    <h2>Software development 1</h2>
+                    <div class="green">
+                        <p class="modulecard ">temp</p>
+                    </div>
+                    <p>6ECTS</p>
+                    <h3>Mattias De Wael</h3>
+                    <button class="moduleButtonClicked" form="personalData" type="button">Completed</button>
+                </section>
+
+                <section>
+                    <h2>Software development 1</h2>
+                    <div class="green">
+                        <p class="modulecard ">temp</p>
+                    </div>
+                    <p>6ECTS</p>
+                    <h3>Mattias De Wael</h3>
+                    <button form="personalData" type="button">Completed</button>
+                </section>
+
+                <section>
+                    <h2>Software development 1</h2>
+                    <div class="green">
+                        <p class="modulecard ">temp</p>
+                    </div>
+                    <p>6ECTS</p>
+                    <h3>Mattias De Wael</h3>
+                    <button form="personalData" type="button">Completed</button>
+                </section>
+
+                <section>
+                    <h2>Software development 1</h2>
+                    <div class="green">
+                        <p class="modulecard " >temp</p>
+                    </div>
+                    <h3>Mattias De Wael</h3>
+                    <p>6ECTS</p>
+                    <button form="personalData" type="button">Completed</button>
+                </section>
+
+                <section>
+                    <h2>Software development 1</h2>
+                    <div class="green">
+                        <p class="modulecard ">temp</p>
+                    </div>
+                    <h3>Mattias De Wael</h3>
+                    <p>6ECTS</p>
+                    <button form="personalData" type="button">Completed</button>
+                </section>
+
+                <section>
+                    <h2>Software development 1</h2>
+                    <div class="green">
+                        <p class="modulecard ">temp</p>
+                    </div>
+                    <h3>Mattias De Wael</h3>
+                    <p>6ECTS</p>
+                    <button form="personalData" type="button">Completed</button>
+                </section>
+
+                <section>
+                    <h2>Software development 1</h2>
+                    <div class="green">
+                        <p class="modulecard ">temp</p>
+                    </div>
+                    <h3>Mattias De Wael</h3>
+                    <p>6ECTS</p>
+                    <button form="personalData" type="button">Completed</button>
+                </section>
+            </div>
+
+            <ul class="flexbox">
+                <li class="button"><a href="#" data-current-section="2" data-reference-section="1"> &lt; Modify personal data</a></li>
+                <li class="button"><a href="#" id="gotoconfigurecourses" data-current-section="2" data-reference-section="3"> Configure course curriculum &gt; </a></li>
+            </ul>
+
+        </section>
+
+        <section>
+            <h2 id="ConfigureCourses" class="title">Configure course curriculum</h2>
+            <p>
+                Select the courses you want to include in your curriculum next academic year
+            </p>
+
+            <div class="filters">
+                <div>
+                    <ol data-current-modules="#configurecoursesmodules" id="f2">
+                        <li><a href="#" class="filtersActive"><p>S1</p></a></li>
+                        <li><a href="#" class="filtersActive"><p>S2</p></a></li>
+                        <li><a href="#" class="filtersActive"><p>S3</p></a></li>
+                        <li><a href="#" class="filtersActive"><p>S4</p></a></li>
+                        <li><a href="#" class="filtersActive"><p>S5</p></a></li>
+                        <li><a href="#" class="filtersActive"><p>S6</p></a></li>
+                    </ol>
+                    <p>zichtbare semesters</p>
+                </div>
+
+                <div>
+                    <select id="sorteerModules" name="sorteerModules" form="personalData">
+                        <option value="oplopend">oplopend</option>
+                        <option value="aflopend">aflopend</option>
+                    </select>
+                    <label for="sorteerModules">sorteer modules</label>
+                </div>
+            </div>
+
+            <div class="flexbox" id="configurecoursesmodules">
+                <section>
+                    <h2>Software development 1</h2>
+                    <div class="green">
+                        <p class="modulecard ">temp</p>
+                    </div>
+                    <p>6ECTS</p>
+                    <h3>Mattias De Wael</h3>
+                    <button form="personalData" type="button">Take course</button>
+                </section>
+
+                <section>
+                    <h2>Software development 1</h2>
+                    <div class="green">
+                        <p class="modulecard ">temp</p>
+                    </div>
+                    <p>6ECTS</p>
+                    <h3>Mattias De Wael</h3>
+                    <button form="personalData" type="button">Take course</button>
+                </section>
+
+                <section>
+                    <h2>Software development 1</h2>
+                    <div class="green">
+                        <p class="modulecard ">temp</p>
+                    </div>
+                    <p>6ECTS</p>
+                    <h3>Mattias De Wael</h3>
+                    <button form="personalData" type="button">Take course</button>
+                </section>
+
+                <section>
+                    <h2>Web Development</h2>
+                    <div class="green">
+                        <p class="modulecard ">temp</p>
+                    </div>
+                    <h3>Mattias De Wael</h3>
+                    <p>6ECTS</p>
+                    <button form="personalData" type="button">Take course</button>
+                </section>
+
+                <section>
+                    <h2>Databases</h2>
+                    <div class="green">
+                        <p class="modulecard ">temp</p>
+                    </div>
+                    <h3>Mattias De Wael</h3>
+                    <p>6ECTS</p>
+                    <button form="personalData" type="button">Take course</button>
+                </section>
+
+                <section>
+                    <h2>Project II: Analysis and development project</h2>
+                    <div class="green">
+                        <p class="modulecard ">temp</p>
+                    </div>
+                    <h3>Mattias De Wael</h3>
+                    <p>6ECTS</p>
+                    <button form="personalData" type="button">Take course</button>
+                </section>
+
+                <section>
+                    <h2>Software development 1</h2>
+                    <div class="green">
+                        <p class="modulecard ">temp</p>
+                    </div>
+                    <h3>Mattias De Wael</h3>
+                    <p>6ECTS</p>
+                    <button form="personalData" type="button">Take course</button>
+                </section>
+            </div>
+
+            <ul class="flexbox">
+                <li class="button"><a href="#" id="gotocompletedcourses" data-current-section="3" data-reference-section="2"> &lt; Modify completed courses</a></li>
+                <li class="button"><a href="#" id="gotochoiceoverview" data-current-section="3" data-reference-section="4"> Choice overview &gt;</a></li>
+            </ul>
+
+        </section>
+
+        <section>
+
+            <h2 id="ChoiceOverview" class="title">Choice overview</h2>
+
+            <p>
+                Carefully study the table below and double check if the completed courses and desired courses check out.
+                Once your application has been submitted, there is no turning back!
+            </p>
+            <ul id="choiceoverviewects" class="flexbox">
+                <li>
+                    <h3>Completed ECTS</h3>
+                    <p>60</p>
+                </li>
+                <li>
+                    <h3>Desired ECTS</h3>
+                    <p id="desired">34</p>
+                </li>
+            </ul>
+
+            <table>
+                <thead>
+                <tr>
+                    <th colspan="3">completed courses</th>
+                    <th colspan="3">desired courses</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th>semester</th>
+                    <th>module</th>
+                    <th># SP</th>
+
+                    <th>semester</th>
+                    <th>module</th>
+                    <th># SP</th>
+                </tr>
+                <tr>
+                    <td>S1</td>
+                    <td>Web development module</td>
+                    <td>6ECTS</td>
+
+                    <td>S3</td>
+                    <td>Web Technology</td>
+                    <td>9ECTS</td>
+                </tr>
+                <tr>
+                    <td>S1</td>
+                    <td>Web development module</td>
+                    <td>6ECTS</td>
+
+                    <td>S3</td>
+                    <td>Web Technology</td>
+                    <td>9ECTS</td>
+                </tr>
+                <tr>
+                    <td>S1</td>
+                    <td>Web development module</td>
+                    <td>6ECTS</td>
+
+                    <td>S3</td>
+                    <td>Web Technology</td>
+                    <td>9ECTS</td>
+                </tr>
+                <tr>
+                    <td>S1</td>
+                    <td>Web development module</td>
+                    <td>6ECTS</td>
+
+                    <td>S3</td>
+                    <td>Web Technology</td>
+                    <td>9ECTS</td>
+                </tr>
+                <tr>
+                    <th colspan="2">Totaal aantal SP</th>
+                    <th>32ECTS</th>
+                    <th colspan="2">Totaal aantal SP</th>
+                    <th>32SP</th>
+                </tr>
+                </tbody>
+            </table>
+
+            <ul class="flexbox">
+                <li class="button">
+                    <a href="#" data-current-section="4" data-reference-section="3"> &lt; Modify desired courses</a>
+                </li>
+                <li>
+                    <!--<a href="#ThankYou"> Submit curriculum</a>-->
+                    <button type="submit" form="personalData">Submit curriculum</button>
+                </li>
+            </ul>
+
+
+        </section>
+
+        <section>
+
+            <h2 id="ThankYou" class="title">Thank you for your submission!</h2>
+
+            <p>Thank you for submitting your curriculum. The course counsellor will be in touch shortly.</p>
+
+        </section>
+
+    </div>
+    <aside>
+
+        <h3>quickview</h3>
+
+        <p>39</p>
+        <p>ECTS</p>
+
+        <div id="asideECTS">
+            <p>39 ECTS left</p>
+            <div id="progress-bar">
+                <div id="progress" class="yellow"></div>
+            </div>
+            <p>10% desired ects allocated</p>
+        </div>
+
+        <ul>
+            <li>3 courses in S3</li>
+            <li>4 courses in S4</li>
+            <li>6 courses in S5</li>
+        </ul>
+
+    </aside>
+</main>
+<footer>
+    <p>All images courtesy of flaticon</p>
+</footer>
+
+
+<script src="assets/js/data/modules.js"></script>
+<script src="assets/js/script.js"></script>
+
+<script src="assets/js/quickview.js"></script>
+
+<script src="assets/js/personal-data.js"></script>
+<script src="assets/js/overviews.js"></script>
+<script src="assets/js/summary.js"></script>
+
+<script src="assets/js/filter-and-sort.js"></script>
+</body>
+</html>
